@@ -24,11 +24,25 @@ body {
 }
 
 .logo {
+  position: relative;
   font-size: 25px;
   color: #ededed;
   /* Removes the link underline */
   text-decoration: none;
   font-weight: 600;
+}
+
+/* Logo appearing fro mthe right animation */
+.logo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(239, 65, 45);
+  animation: showRight 1s ease forwards;
+  animation-delay: 0.4s;
 }
 
 .navbar a {
@@ -52,6 +66,9 @@ body {
 
 .home {
   height: 100vh;
+  /* background: url("myPic.png") color(rgb(239, 65, 45)); */
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   padding: 0 10%;
@@ -63,30 +80,83 @@ body {
 
 /* Yeruslav Krupetsky line */
 .home-content h1 {
+  position: relative;
   font-size: 56px;
   font-weight: 700;
   line-height: 1.2;
 }
 
+.home-content h1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(239, 65, 45);
+  animation: showRight 1s ease forwards;
+  animation-delay: 1s;
+}
+
 /* FullStack Developer line */
 .home-content h3 {
+  position: relative;
   font-size: 32px;
   font-weight: 700;
   color: #081b29;
 }
 
+.home-content h3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(239, 65, 45);
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.3s;
+}
+
 /* Between h3 and buttons  */
 .home-content p {
+  position: relative;
   font-size: 16px;
   margin: 20px 0 40px;
 }
 
+.home-content p::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(239, 65, 45);
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.6s;
+}
+
 /* Hire me and Let's connect background */
 .home-content .btn-box {
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: 345px;
   height: 50px;
+}
+
+.home-content .btn-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(239, 65, 45);
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.9s;
+  z-index: 2;
 }
 
 /* Hire me and Let's connect buttons */
@@ -151,4 +221,93 @@ body {
 
 .btn-box a:hover::before {
   width: 100%;
+}
+
+/* Social media contact links icons */
+.home-sci {
+  position: absolute;
+  bottom: 40px;
+  width: 170px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-sci::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(239, 65, 45);
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.9s;
+  z-index: 2;
+}
+
+.home-sci a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #081b29;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #081b29;
+  align-items: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.home-sci a:nth-child(1):hover {
+  transition: 0.5s;
+  color: #0a66c2;
+}
+.home-sci a:nth-child(2):hover {
+  transition: 0.5s;
+  color: #ededed;
+}
+.home-sci a:nth-child(3):hover {
+  transition: 0.5s;
+  color: rgb(216, 41, 41);
+}
+
+.home-sci a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #081b29;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.home-sci a:hover::before {
+  width: 100%;
+}
+
+/* .home-imgHover {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  width: 500px;
+  height: 100%;
+  background: transparent;
+  transition: 3s;
+}
+
+.home-imgHover:hover {
+  background: yellowgreen;
+} */
+
+/* Keyframes animation */
+@keyframes showRight {
+  100% {
+    width: 0;
+  }
 }
