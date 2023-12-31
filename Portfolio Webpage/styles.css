@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: rgb(239, 65, 45);
+  color: #ededed;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 25px;
+  color: #ededed;
+  /* Removes the link underline */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navbar a {
+  font-size: 18px;
+  color: #ededed;
+  /* Removes the link underline */
+  text-decoration: none;
+  /* Makes the text more bold */
+  font-weight: 600;
+  /* Give the buttons space in between */
+  margin-left: 35px;
+  /* Makes a hover animation transition */
+  transition: 0.3s;
+}
+
+/* Makes the navbar Links have a color change animation when hover over with a mouse */
+.navbar a:hover,
+.navbar a.active {
+  color: #081b29;
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.home-content {
+  max-width: 701px;
+}
+
+/* Yeruslav Krupetsky line */
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* FullStack Developer line */
+.home-content h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #081b29;
+}
+
+/* Between h3 and buttons  */
+.home-content p {
+  font-size: 16px;
+  margin: 20px 0 40px;
+}
+
+/* Hire me and Let's connect background */
+.home-content .btn-box {
+  display: flex;
+  justify-content: space-between;
+  width: 345px;
+  height: 50px;
+}
+
+/* Hire me and Let's connect buttons */
+.btn-box a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 100%;
+  background: #081b29;
+  border: 2px solid #081b29;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #ededed;
+  transition: 0.5s;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Hover animation for the Hire me and Let's Connect buttons  */
+/* .btn-box a:hover {
+  color: #081b29;
+  background: transparent;
+  border: 2px solid #ededed;
+} */
+
+/* This Chooses the second button the Let's connect button and only makes it transparent forever */
+.btn-box a:nth-child(2) {
+  background: transparent;
+  color: #081b29;
+}
+.btn-box a:nth-child(2):hover {
+  background: transparent;
+  color: #ededed;
+}
+
+.btn-box a:nth-child(2)::before {
+  background: #081b29;
+  color: #081b29;
+}
+
+/* Adding a swipe animation to the Hire me and Let's Connect buttons */
+.btn-box a:hover {
+  color: #081b29;
+}
+
+.btn-box a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ededed;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.btn-box a:hover::before {
+  width: 100%;
+}
